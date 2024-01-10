@@ -143,15 +143,15 @@ def get_effectivity(purpose: int):
     for drill in drills:
 
         e_drills = DrillEffectivity.objects.filter(drill=drill).all()
+
         eff = 0
 
         for e_drill in e_drills:
             eff += e_drill.effectivity
-
         if e_drills:
             drills_effectivity[drill.name] = round(eff / len(e_drills), 2)
 
-    result = dict(sorted(drills_effectivity.items(), key=lambda item: item[1]))
+    result = dict(sorted(drills_effectivity.items(), key=lambda item: item[1], reverse=True))
 
     return result
 

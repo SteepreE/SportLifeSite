@@ -1,0 +1,31 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="col align-self-center m-5">
+        <div class="row justify-content-center p-3 fs-2 text-decoration-underline">
+            Ваши комплексы
+        </div>
+        <div class="row justify-content-center p-3">
+            <table class="table rounded-4">
+                <thead>
+                    <tr>
+                        <th scope="col">№</th>
+                        <th scope="col">Количество дней</th>
+                        <th scope="col">Потеряно кг</th>
+                        <th scope="col">Любимое упражнение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for complex in complexes %}
+                    <tr>
+                        <th scope="row">{{ complex.id }}</th>
+                        <td>{{ complex.duration }}</td>
+                        <td>{{ complex.weight_lost }}</td>
+                        <td>{{ complex.favorite_drill.name }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+              </table>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,39 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="row justify-content-center align-items-center m-5">
+        <div class="col">
+            <div class="row">
+                <div class="col-6">
+                    <div class="row">
+                        <p class="text-end fs-2">О нас</p>
+                    </div>
+                    <div class="row">
+                        <p class="fs-3">
+                            Наша команда экспертов разработала уникальную систему подбора упражнений, которая учитывает ваши
+                            индивидуальные потребности и цели. Мы предлагаем широкий выбор упражнений, которые помогут вам сжигать жир,
+                            укреплять мышцы и улучшать общую форму тела.<br/><br/>Пройдите тестирование, чтобы мы могли создать для вас
+                            индивидульнаю программу.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-6 ps-5">
+                    <img src="{% static 'images/index_image.png' %}" alt="">
+                </div> 
+            </div>
+            <div class="row justify-content-center align-items-center">
+                <div class="row w-50">
+                    {% if user.is_authenticated %}
+                    <a class="btn btn-primary rounded-5" href="/profile" role="button">
+                        <p class="fs-4">Войти в профиль</p>
+                    </a>
+                    {% else %}
+                    <a class="btn btn-primary rounded-5" href="/login" role="button">
+                        <p class="fs-4">Авторизоваться</p>
+                    </a>
+                    {% endif %}
+                </div>    
+            </div>
+        </div>
+    </div>
+{% endblock %}

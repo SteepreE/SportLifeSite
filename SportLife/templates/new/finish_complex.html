@@ -1,0 +1,59 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+<div class="col align-self-center m-5">
+    <div class="row justify-content-center p-3 fs-2 text-decoration-underline">
+        Поздравялем, курс завершен!!!
+    </div>
+    <div class="row justify-content-center p-3 fs-2">
+        Вы занимались: {{ duration }} дней(дня)
+    </div>
+    <div class="row justify-content-center p-3 fs-2">
+        {% if lost_weight %}
+        За это время вы потеряли: {{ lost_weight }} кг
+        {% else %}
+        За это время вы набрали: {{ get_weight }} кг
+        {% endif %}
+    </div>
+    <div class="row justify-content-center p-3 fs-2">
+        Любимое упражнение: 
+    </div>
+    <div class="card m-4 rounded-5 border-dark ps-3 pe-3" for="btn-check-{{drill.id}}">
+        <div class="card-body">
+            <h5 class="card-title fs-4 text-center">{{drill.name}}</h5>
+            <p class="card-text fs-5 pt-1 text-start">{{drill.description}}</p>
+        </div>
+        <div class="p-4">
+            <div class="row">           
+                <div class="col">
+                    <div class="row justify-content-start">
+                        Количество подходов: {{drill.repeats_count}}
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="row justify-content-end">
+                        Количество повторений: {{drill.sets_count}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row justify-content-center p-3 fs-2">
+            <div class="row justify-content-center w-50">
+                <a class="btn btn-primary rounded-5" href="/complexes" role="button">
+                    <p class="fs-4">Мои комплексы</p>
+                </a>
+            </div>
+            <div class="row justify-content-center w-50">
+                <a class="btn btn-primary rounded-5" href="/profile" role="button">
+                    <p class="fs-4">Профиль</p>
+                </a>
+            </div>
+            <div class="row justify-content-center w-50">
+                <a class="btn btn-primary rounded-5" href="/eff_test" role="button">
+                    <p class="fs-4">Пройти тест эффективности</p>
+                </a>
+            </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="col align-self-center m-5">
+        <div class="row justify-content-center p-3 fs-3 text-decoration-underline">
+            Оцените эффективность упражнений
+        </div>
+        <div class="row justify-content-center p-3 pt-5 fs-3">
+            Оцените по 10-бальной шкале <br> эффективность выбраных упрежнений 
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center p-3">
+                <table class="table rounded-4">
+                    <thead>
+                        <tr>
+                            <th scope="col">Упражнение</th>
+                            <th scope="col">Эффективность</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for drill in drills %}
+                        <tr>
+                            <td>{{ drill.name }}</td>
+                            <td>
+                                <select class="form-select" aria-label="Default select example" name="effectivity">
+                                    <option value="{{ drill.id }}-1">1</option>
+                                    <option value="{{ drill.id }}-2">2</option>
+                                    <option value="{{ drill.id }}-3">3</option>
+                                    <option value="{{ drill.id }}-4">4</option>
+                                    <option value="{{ drill.id }}-5">5</option>
+                                    <option value="{{ drill.id }}-6">6</option>
+                                    <option value="{{ drill.id }}-7">7</option>
+                                    <option value="{{ drill.id }}-8">8</option>
+                                    <option value="{{ drill.id }}-9">9</option>
+                                    <option value="{{ drill.id }}-10">10</option>
+                                  </select>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                  </table>
+            </div>
+        <div class="row justify-content-center align-items-center pt-5">
+            <button type="submit" class="btn btn-primary fs-3 rounded-4 w-50">Отправить</button>
+        </div>
+        </form>
+    </div>
+{% endblock %}

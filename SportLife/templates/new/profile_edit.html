@@ -1,0 +1,109 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="col align-self-center m-5">
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark rounded-4 rounded-bottom-0 fs-2 p-2" style="background-color: #0ECEE9;">
+            Редактирование профиля
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="row justify-content-center align-items-center border border-2 border-dark">
+                <div class="col">
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Ник
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="username" value="{{ user.username }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                День рождения:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="bd_d" value="{{bd_d}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Месяц рождения:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="bd_m" value="{{bd_m}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Год рождения:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="bd_y" value="{{bd_y}}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Почта:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="email" value="{{ user.email }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Пароль:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="password1" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Подтвердите пароль:
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="password2" value="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Рост (в см)
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="height" value="{{ user.height }}">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center pt-4 pb-4">
+                        <div class="col-6">
+                            <div class="row fs-4">
+                                Вес (в кг)
+                            </div>
+                            <div class="row ">
+                                <input class="form-control form-control-lg" type="text" name="weight" value="{{ user.weight }}">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center align-items-center pt-4 pb-4">
+                <button type="submit" class="btn btn-primary fs-3 rounded-5 w-50">Редактировать</button>
+            </div>
+        </form>
+    </div>
+{% endblock %}

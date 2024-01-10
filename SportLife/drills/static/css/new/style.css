@@ -1,0 +1,9 @@
+.btn-primary {
+    background-color: #0ECEE9 !important;
+    border-color: #000000 !important;
+    color: #000000 !important;
+}
+
+.card {
+    min-height: 26vh !important;
+}

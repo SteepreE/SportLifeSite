@@ -1,0 +1,48 @@
+  <nav class="navbar navbar-expand-lg border-bottom border-2 border-dark" style="background-color: #D9D9D9;">
+    <div class="container-fluid m-1 ">
+      <a class="navbar-brand fs-1" href="/">SportLife</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+        {% if user.is_authenticated  %}
+          <li class="nav-item dropdown">
+            <button class="btn dropdown-toggle border border-dark" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="dropdown-menu">   
+                <li class="dropdown-item">
+                    <a class="nav-link active" href="/">Главная страница</a>
+                </li>
+                <li class="dropdown-item">
+                    {% if user_last_complex  %}
+                        <a class="nav-link active" aria-current="page" href="/user_drills">Мой курс</a>
+                    {% else %}
+                        <a class="nav-link active" aria-current="page" href="/new_complex">Тестирование</a>
+                    {% endif %}
+                </li>
+                <li class="dropdown-item">
+                    <a class="nav-link active" href="/profile">Профиль</a>
+                </li>
+                <li class="dropdown-item">
+                    <a class="nav-link active" href="/complexes">Комплексы</a>
+                </li>
+                <li class="dropdown-item">
+                  <a class="nav-link active" href="/eff_result">Таблица эффективности упражнений</a>
+                </li>
+                <li class="dropdown-item">
+                    <form method="post" action="{% url 'logout' %}">
+                        {% csrf_token %}
+                        <button class="nav-link active" type="submit" href="/logout">Выход</button>
+                    </form>
+                </li>
+            </ul>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </div>
+    <div class="col fs-3 pe-3">
+      {% if user.is_authenticated  %}
+      {{ user.username }}
+      {% endif %}
+    </div>
+  </nav>

@@ -1,0 +1,141 @@
+.element {
+  background-color: #e9e8e8;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+.element .div {
+  background-color: #e9e8e8;
+  overflow: hidden;
+  width: 1920px;
+  height: 1142px;
+  position: relative;
+}
+
+.element .overlap {
+  position: absolute;
+  width: 1920px;
+  height: 169px;
+  top: 0;
+  left: 0;
+  background-color: #d9d9d9;
+}
+
+.element .group {
+  position: absolute;
+  width: 420px;
+  height: 116px;
+  top: 26px;
+  left: 813px;
+}
+
+.element .text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 96px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .gg-profile {
+  position: absolute;
+  width: 99px;
+  height: 99px;
+  top: 35px;
+  left: 1779px;
+}
+
+.element .overlap-group-wrapper {
+  position: absolute;
+  width: 1922px;
+  height: 169px;
+  top: 973px;
+  left: 0;
+}
+
+.element .overlap-group {
+  position: relative;
+  width: 1920px;
+  height: 169px;
+  background-color: #d9d9d9;
+}
+
+.element .text-wrapper-2 {
+  position: absolute;
+  top: 125px;
+  left: 0;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  font-size: 36px;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .text-wrapper-3 {
+  top: 195px;
+  left: 838px;
+  font-size: 64px;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .p {
+  width: 962px;
+  top: 318px;
+  left: 187px;
+  font-size: 36px;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .overlap-wrapper {
+  position: absolute;
+  width: 657px;
+  height: 132px;
+  top: 746px;
+  left: 632px;
+}
+
+.element .div-wrapper {
+  position: relative;
+  width: 655px;
+  height: 132px;
+  background-color: #0dcee8;
+  border-radius: 49px;
+}
+
+.element .text-wrapper-4 {
+  top: 39px;
+  left: 149px;
+  font-size: 45px;
+  white-space: nowrap;
+  position: absolute;
+  font-family: "Inter-Regular", Helvetica;
+  font-weight: 400;
+  color: #000000;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.element .ellipse {
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  top: 266px;
+  left: 1372px;
+}

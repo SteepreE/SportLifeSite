@@ -1,0 +1,36 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="col align-self-center m-5">
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark rounded-4 rounded-bottom-0 fs-1 p-2" style="background-color: #0ECEE9;">
+            Авторизация
+        </div>
+        <div class="row justify-content-center align-items-center border border-2 border-dark fs-4">
+            <div class="col">
+                <form method="post">
+                    {% csrf_token %}
+                    <div class="row justify-content-center align-items-center pt-4">
+                        <div class="row mb-3 justify-content-center w-50">
+                            <label for="exampleInputEmail1" class="form-label">Имя пользователя</label>
+                            {{ form.username }}
+                          </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center">
+                        <div class="row mb-3 justify-content-center w-50">
+                            <label for="exampleInputPassword1" class="form-label">Пароль</label>
+                            {{ form.password }}
+                        </div>
+                    </div>
+                    <div class="row justify-content-center align-items-center p-4 fs-4 text-decoration-underline">
+                        <a href="/registration" class="text-dark text-center w-auto">Зарегистрироваться</a>
+                    </div>
+                    <div class="row justify-content-center align-items-center p-4">
+                        <button type="submit" class="btn btn-primary fs-5 rounded-4 w-25">Войти</button>
+                   </div>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+

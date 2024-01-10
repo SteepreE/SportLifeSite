@@ -1,0 +1,129 @@
+{% extends "new/base.html" %}
+{% load static %}
+{% block content %}
+    <div class="col align-self-center m-5 pb-5">
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark rounded-4 rounded-bottom-0 fs-2 p-2" style="background-color: #0ECEE9;">
+            ПРОФИЛЬ
+        </div>
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark">
+            <div class="col fs-4">
+                <div class="row justify-content-center p-3 fs-4 text-decoration-underline">
+                    Личный данные
+                </div>
+                <div class="row ps-4">
+                    <div class="col-3">
+                        Ник: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_nick}}
+                    </div>
+                </div>
+                <div class="row ps-4 pt-4">
+                    <div class="col-3">
+                        Возраст: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_age}}
+                    </div>
+                </div>
+                <div class="row ps-4 pt-4 pb-3">
+                    <div class="col-5">
+                        Дата рождения:
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_bd}}
+                    </div>
+                </div>
+            </div>
+            <div class="col align-self-end fs-4">
+                <div class="row ps-2 pt-4 pe-4">
+                    <div class="col-3">
+                        Почта: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_mail}}
+                    </div>
+                </div>
+                <div class="row ps-2 pt-4 pe-4 pb-3">
+                    <div class="col-3">
+                        Пароль: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        **********
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark">
+            <div class="col fs-4">
+                <div class="row justify-content-center p-3 fs-4 text-decoration-underline">
+                    Параметры
+                </div>
+                <div class="row ps-4">
+                    <div class="col-3">
+                        Рост: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_height}}
+                    </div>
+                </div>
+                <div class="row ps-4 pt-4 pb-3">
+                    <div class="col-3">
+                        Вес: 
+                    </div>
+                    <div class="col bg-light w-auto rounded-4">
+                        {{user_weight}}
+                    </div>
+                </div>
+            </div>
+            <div class="col align-self-center fs-4">
+                <div class="row justify-content-center p-3 fs-4 text-decoration-underline">
+                    Дата последнего комплекса
+                </div>
+                <div class="row ps-4 pt-4 pe-4 pb-3">
+                    <div class="col bg-light w-auto rounded-4">
+                        {% if user_active_complex %}     
+                            {{user_active_complex.start_date}}
+                        {% else %}
+                         -
+                        {% endif %}  
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center border border-2 border-bottom-0 border-dark">
+            <div class="col">
+                <div class="row justify-content-center p-3 fs-4 text-decoration-underline">
+                    Любимое упражнение
+                </div>                
+                <div class="row justify-content-center p-3">
+                    <div class="card rounded-5 border-dark ps-3 pe-3">
+                        <div class="card-body">
+                            <h5 class="card-title fs-4 text-center">{{ user_active_complex.favorite_drill.name }}</h5>
+                            <p class="card-text fs-5 pt-1 text-start">{{user_active_complex.favorite_drill.description}}</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="row">           
+                                <div class="col">
+                                    <div class="row justify-content-start">
+                                        Количество подходов: {{user_active_complex.favorite_drill.repeats_count}}
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="row justify-content-end">
+                                        Количество повторений: {{user_active_complex.favorite_drill.sets_count}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center align-items-center border border-2 border-top-0 border-dark pb-2">
+            <a class="btn btn-primary rounded-5 w-50" href="/profile_edit" role="button">
+                <p class="fs-4">Редактировать профиль</p>
+            </a>
+        </div>
+    </div>
+{% endblock %}
